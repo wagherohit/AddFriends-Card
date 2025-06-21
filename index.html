@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDFRIEND-CARD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+            color: aliceblue;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            
+        
+        }
+        .box1{
+            margin-top: 65px;
+            padding: 30px;
+            
+        }
+        img{
+            border-radius: 90%;
+            padding: 10px;
+            border: 3px solid green;
+            
+        }
+        .name{
+            margin: 10px;
+        }
+        .hero{
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+        .btn{
+            text-decoration: none;
+            color: #fff;
+            background-color:royalblue;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="box">
+    <div>
+        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" height="200px" width="200px" alt="">
+    </div>
+
+    <div class="name">
+        <h1>Angel Priya</h1>
+        <h2>Post</h2>
+        <h4>0</h4>
+    </div>
+
+    <div class="box1">
+        <h2>Folowers</h2>
+        <h4 id="to">0</h4>
+    </div>
+    <div class="box1">
+        <h2>Following</h2>
+        <h4>0</h4>
+       
+    </div>
+   </div>
+
+   <div class="hero">
+    <button class="btn">Follow</button>
+    <button  class="btn" style="visibility: hidden; background-color: green;" id="btn"></button>
+    
+    
+   </div>
+    
+
+   <script>
+
+   
+   let res = document.getElementById('to')
+   let btn = document.querySelector('button')
+   let fri = document.querySelector('h6')
+   let rfri = document.getElementById('btn')
+
+   check = 0
+
+   btn.addEventListener("click",function(){
+    if( check==0){
+        res.innerHTML = 1
+         btn.innerHTML = "Unfollow"
+         rfri.style.visibility = ""
+         rfri.innerHTML = " Friends"
+         
+         check = 1
+    }else{
+        count = res.innerHTML
+        res.innerHTML = count-1
+        btn.innerHTML = "Follow"
+        rfri.style.visibility = "hidden"
+        
+        check = 0
+    
+    }
+   })
+
+   </script>
+</body>
+</html>
